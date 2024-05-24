@@ -5,7 +5,7 @@ const a = Symbol("Himanshi")
 let b = {
     Name: "Himanshi",
     Age: 19,
-    [a]: "Deepak",
+    [a]: "Parshav",
     Location: "Ambala",
     House: 339,
     isLoggedIn: false
@@ -70,12 +70,12 @@ console.log ({...x, ...y})
 let g = [{
     Name: "Himanshi",
     Age: 19,
-    Location: "Ambala",
+    Location: "Ambala"
 },
 {
-    Name: "Deepak",
-    Age: 22,
-    Location: "Rewari",
+    Name: "Parshav",
+    Age: 17,
+    Location: "Kurukshetra"
 }
 ]
 
