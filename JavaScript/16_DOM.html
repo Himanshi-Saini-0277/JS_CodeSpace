@@ -19,7 +19,7 @@
         <p>Lorem ipsum dolor sit amet.</p>
         <input type="Password"></input>
 
-        <ul>
+        <ul class="h">
             <li>Hello</li>
             <li>Hi</li>
             <li>Hlo</li>
@@ -28,4 +28,53 @@
     </div>
     
 </body>
+<script>
+    let parent = document.querySelector('.h')
+    console.log(parent)
+    console.log(parent.children)
+    console.log(parent.firstElementChild)
+    
+    for (i=0; i<parent.children.length; i++){
+        console.log(parent.children[0].innerText)
+    }
+
+    parent.children[1].style.color ="green"
+    console.log(parent.children[1])
+
+    console.log("Nodes: ", parent.childNodes)
+    console.log(document.querySelector('.h').parentElement)
+
+    const div = document.createElement('div')
+    div.className = "d_class"
+    div.id = Math.round((Math.random()*10) +1)
+    div.setAttribute ("title", "Document Object Model")
+    div.style.backgroundColor = "pink"
+    div.style.color = "black"
+    div.style.height = "20px"
+    div.style.width = "150px"
+
+    let add = document.createTextNode("Himanshi Saini")
+    div.appendChild(add)
+
+    document.body.appendChild(div)
+
+    // Create DOM
+    function enter(entry){
+        let li = document.createElement('li')
+        li.appendChild(document.createTextNode(entry))
+        document.querySelector('.h').appendChild(li)
+    }
+    enter("Himanshi")
+
+    // Edit DOM
+    const r = document.querySelector("li:nth-child(3)")
+    let x = document.createElement('li')
+    x.textContent = "JavaScript"
+    r.replaceWith(x)
+
+    // Remove DOM
+    const p = document.querySelector("li:last-child")
+    p.remove()
+
+</script>
 </html>
