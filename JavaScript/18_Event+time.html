@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Himanshi Saini</h1>
+    <button style="height: 30px; width: 70px;" id="start">Start</button>
+    <button style="height: 30px; width: 70px;" id="stop">Stop</button>
+    
+</body>
+<script>
+    let a = function (){
+        console.log ("Himanshi", new Date().toLocaleTimeString())
+    }
+    let d = setInterval(a, 1000)
+    
+    let b = function(){
+        document.querySelector('h1').innerHTML = "Himanshi"
+    }
+    let c = setTimeout(b, 2000)
+    let e = document.querySelector("#stop").addEventListener("click", function (){
+        clearTimeout(c)
+        console.log("Stoped")
+        })
+
+</script>
+</html>
