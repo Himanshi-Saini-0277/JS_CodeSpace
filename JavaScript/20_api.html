@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #set{
+            border: solid;
+            margin-left: 35%;
+        }
+    </style>
+</head>
+<body>
+    <button style="width: 60px; height: 40px; margin-left: 50%; margin-top: 15%;" id="show">Show</button>
+    <br>
+    <br>
+    <div style="height: 300px; width: 500px;" id="set"></div>
+</body>
+<script>
+    let y = document.querySelector('#set')
+
+    let x = 'https://api.github.com/users/Himanshi-Saini-0277'
+    let a = new XMLHttpRequest()
+
+document.querySelector('#show').addEventListener('click', function(){
+
+    a.open('GET',x)
+    console.log(a.readyState) // prints 1
+
+    a.onreadystatechange = function (){
+        console.log(a.readyState) // prints 2 3 4
+            
+        if (a.readyState === 4){
+            console.log(this.responseText) // this will print the inner text in that url
+                
+            let b = JSON.parse(this.responseText)
+            console.log(b.login)
+            console.log(b.avatar_url)
+
+            y.innerHTML = `${b.login} <br> <br>`
+
+            let img = document.createElement('img')
+            img.src = b.avatar_url
+            img.style.width = '100px'
+            img.style.height = '100px'
+
+            y.appendChild(img)
+        }
+    }
+    a.send()
+})
+
+</script>
+</html>
