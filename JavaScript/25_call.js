@@ -9,3 +9,19 @@ let b = function (username, age,course){
 }
 
 console.log(new b("Himanshi", 19, "B.Tech"))
+
+// How to check the properties of anything
+
+let x = {
+    Name: "Himanshi"
+}
+console.log(Object.getOwnPropertyDescriptor(x, "Name"))
+
+// Change the properties 
+Object.defineProperty (x, "Name", {
+    writable: false,
+  enumerable: false,
+  configurable: false
+})
+
+console.log(Object.getOwnPropertyDescriptor(x, "Name"))
