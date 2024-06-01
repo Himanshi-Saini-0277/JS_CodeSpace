@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind</title>
+</head>
+<body>
+    <button style="margin-top: 25%; margin-left: 45%;">Click me and inspect</button>
+</body>
+<script>
+    class p{
+        constructor (){
+            this.username = "Himanshi"
+
+            document.querySelector('button').addEventListener('click', this.fromp.bind(this))
+        }
+
+        fromp(){
+            console.log (`from p ${this.username}`)
+        }
+    }
+
+    let x = new p ()
+
+</script>
+</html>
